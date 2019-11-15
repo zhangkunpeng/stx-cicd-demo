@@ -1,0 +1,14 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: stx-cicd-demo
+spec:
+  template:
+    metadata:
+      labels:
+        app: stx-cicd-demo
+    spec:
+      containers:
+      - image: kunpeng4code/stx-cicd-demo:<BUILD_TAG>
+        imagePullPolicy: IfNotPresent
+        name: stx-cicd-demo

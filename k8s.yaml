@@ -1,4 +1,4 @@
-apiVersion: apps/v1
+apiVersion: extensions/v1beta1
 kind: Deployment
 metadata:
   name: stx-cicd-demo
@@ -15,6 +15,8 @@ spec:
       - image: registry.local:9001/stx-cicd-demo:latest
         imagePullPolicy: Always
         name: stx-cicd-demo
+      imagePullSecrets:
+      - name: regsecret
 
 ---
 apiVersion: v1
